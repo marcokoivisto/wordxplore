@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Map" size="0.900000 0.647782" />
+    <ImageTarget name="Sweden" size="10.000000 22.871796" />
+    <ImageTarget name="Norway" size="10.000000 12.060439" />
+    <ImageTarget name="Iceland" size="10.000000 8.309859" />
+    <ImageTarget name="Germany" size="10.000000 12.959184" />
+    <ImageTarget name="Finland" size="10.000000 17.253885" />
+    <ImageTarget name="Denmark" size="10.000000 12.705882" />
+  </Tracking>
+</QCARConfig>

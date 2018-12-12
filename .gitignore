@@ -37,9 +37,4 @@ sysinfo.txt
 
 # Added by us
 *.DS_Store
-[Aa]ssets/[Vv]uforia/
-[Aa]ssets/[Mm]extMesh Pro/
-[Aa]ssets/[Ee]ditor/
-[Aa]ssets/[Ss]treamingAssets/
-[Aa]ssets/[Rr]esources/
 [Ww]ordxplore/
