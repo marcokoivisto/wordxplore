@@ -7,9 +7,12 @@ public class TranslationManager : Singleton<TranslationManager> {
 
     string text = "Hello";
     public InputField input;
+    public Text downToggleLabel;
     List<Country> countries = new List<Country>();
 
     public void Register(Country country) {
+        input.text = text;
+        downToggleLabel.text = text;
         countries.Add(country);
     }
 
@@ -25,6 +28,7 @@ public class TranslationManager : Singleton<TranslationManager> {
         Debug.Log(input);
         if (input && input.text != "") {
             text = input.text;
+            downToggleLabel.text = text;
         }
     }
 }
