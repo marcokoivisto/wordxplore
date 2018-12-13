@@ -10,6 +10,9 @@ public class TranslationManager : Singleton<TranslationManager> {
     public Text downToggleLabel;
     List<Country> countries = new List<Country>();
 
+    private GameObject goToPlay;
+    public AudioSource audioSource;
+
     public void Register(Country country) {
         input.text = text;
         downToggleLabel.text = text;
@@ -24,11 +27,29 @@ public class TranslationManager : Singleton<TranslationManager> {
         return text;
     }
 
+    public void SetGoToPlay(GameObject goToPlay) {
+        this.goToPlay = goToPlay;
+    }
+
+    public GameObject GetGoToPlay() {
+        return goToPlay;
+    }
+
     public void ReadInputText() {
         Debug.Log(input);
         if (input && input.text != "") {
             text = input.text;
             downToggleLabel.text = text;
         }
+    }
+
+    public void PlayTranslation() {
+        if (goToPlay.GetComponent<Country>().hl != "") {
+            goToPlay.GetComponent<Country>().PlayAudio();
+        }
+    }
+
+    public Coroutine Play(string text, string hl) {
+        return StartCoroutine(TranslateAPI.GetAudio(audioSource, text, hl));
     }
 }

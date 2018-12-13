@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 222646101058331140}
   - component: {fileID: 114234542619764324}
   - component: {fileID: 114682282947973832}
+  - component: {fileID: 65011350375408956}
   m_Layer: 0
   m_Name: CountryLabel
   m_TagString: Untagged
@@ -73,6 +74,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1541613576801122}
   m_Mesh: {fileID: 0}
+--- !u!65 &65011350375408956
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1541613576801122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114234542619764324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,6 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toLanguage: sv
+  hl: en-gb
+  cameraToLookAt: {fileID: 0}
 --- !u!222 &222646101058331140
 CanvasRenderer:
   m_ObjectHideFlags: 1

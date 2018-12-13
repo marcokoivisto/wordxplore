@@ -45,4 +45,28 @@ public static class TranslateAPI {
             Debug.Log(textRes);
 		}
 	}
+
+    static public IEnumerator GetAudio(AudioSource audioSource, string text, string hl)
+    {
+
+        string url = "https://api.voicerss.org/" +
+            "?key=" + "5fa428c283e34170aa6d7229debc13a8" +
+            "&hl=" + WWW.EscapeURL(hl) +
+            "&f=44khz_16bit_stereo" +
+            "&src=" + WWW.EscapeURL(text);
+
+        Debug.Log(url);
+
+        WWW www = new WWW(url);
+
+        yield return www;
+
+        if (www.error != "")
+        {
+            Debug.Log("Error!" + url);
+        }
+
+        audioSource.clip = www.GetAudioClip(false, true, AudioType.MPEG);
+        audioSource.Play();
+    }
 }
