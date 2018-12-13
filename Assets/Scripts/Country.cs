@@ -3,22 +3,22 @@ using TMPro;
 
 public class Country : MonoBehaviour  {
 
-    string fromLanguage = "en";
+    string lang;
+    readonly string fromLanguage = "en";
     public string toLanguage = "en";
 
-    TextMeshPro textToGo;
+    TextMeshPro textMP;
 
     private void Start()
     {
-        string text = "beer";
-        string lang = fromLanguage + '-' + toLanguage;
+        lang = fromLanguage + '-' + toLanguage;
+        textMP = GetComponent<TextMeshPro>();
 
-        textToGo = GetComponent<TextMeshPro>();
-        Translate(text, lang, textToGo);
-
+        TranslationManager.Instance.Register(this);
+        Translate(TranslationManager.Instance.GetText());
     }
 
-    Coroutine Translate(string text, string lang, TextMeshPro textMP) {
+    public Coroutine Translate(string text) {
         return StartCoroutine(TranslateAPI.GetTranslation(text, lang, textMP));
     }
 }
