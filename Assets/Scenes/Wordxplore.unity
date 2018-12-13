@@ -386,6 +386,11 @@ Prefab:
       propertyPath: toLanguage
       value: no
       objectReference: {fileID: 0}
+    - target: {fileID: 114682282947973832, guid: 6225b1ac5b85c4800834d0c6017232d4,
+        type: 2}
+      propertyPath: cameraToLookAt
+      value: 
+      objectReference: {fileID: 1392457632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6225b1ac5b85c4800834d0c6017232d4, type: 2}
   m_IsPrefabAsset: 0
@@ -510,6 +515,11 @@ Prefab:
       propertyPath: toLanguage
       value: fi
       objectReference: {fileID: 0}
+    - target: {fileID: 114682282947973832, guid: 6225b1ac5b85c4800834d0c6017232d4,
+        type: 2}
+      propertyPath: cameraToLookAt
+      value: 
+      objectReference: {fileID: 1392457632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6225b1ac5b85c4800834d0c6017232d4, type: 2}
   m_IsPrefabAsset: 0
@@ -671,6 +681,11 @@ Prefab:
       propertyPath: toLanguage
       value: es
       objectReference: {fileID: 0}
+    - target: {fileID: 114682282947973832, guid: 6225b1ac5b85c4800834d0c6017232d4,
+        type: 2}
+      propertyPath: cameraToLookAt
+      value: 
+      objectReference: {fileID: 1392457632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6225b1ac5b85c4800834d0c6017232d4, type: 2}
   m_IsPrefabAsset: 0
@@ -1225,6 +1240,11 @@ Prefab:
       propertyPath: toLanguage
       value: fr
       objectReference: {fileID: 0}
+    - target: {fileID: 114682282947973832, guid: 6225b1ac5b85c4800834d0c6017232d4,
+        type: 2}
+      propertyPath: cameraToLookAt
+      value: 
+      objectReference: {fileID: 1392457632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6225b1ac5b85c4800834d0c6017232d4, type: 2}
   m_IsPrefabAsset: 0
@@ -1344,6 +1364,11 @@ Prefab:
       propertyPath: m_Name
       value: Sweden
       objectReference: {fileID: 0}
+    - target: {fileID: 114682282947973832, guid: 6225b1ac5b85c4800834d0c6017232d4,
+        type: 2}
+      propertyPath: cameraToLookAt
+      value: 
+      objectReference: {fileID: 1392457632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6225b1ac5b85c4800834d0c6017232d4, type: 2}
   m_IsPrefabAsset: 0
@@ -1589,6 +1614,11 @@ Prefab:
       propertyPath: toLanguage
       value: is
       objectReference: {fileID: 0}
+    - target: {fileID: 114682282947973832, guid: 6225b1ac5b85c4800834d0c6017232d4,
+        type: 2}
+      propertyPath: cameraToLookAt
+      value: 
+      objectReference: {fileID: 1392457632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6225b1ac5b85c4800834d0c6017232d4, type: 2}
   m_IsPrefabAsset: 0
@@ -1713,6 +1743,11 @@ Prefab:
       propertyPath: toLanguage
       value: it
       objectReference: {fileID: 0}
+    - target: {fileID: 114682282947973832, guid: 6225b1ac5b85c4800834d0c6017232d4,
+        type: 2}
+      propertyPath: cameraToLookAt
+      value: 
+      objectReference: {fileID: 1392457632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6225b1ac5b85c4800834d0c6017232d4, type: 2}
   m_IsPrefabAsset: 0
@@ -2010,6 +2045,11 @@ Prefab:
       propertyPath: toLanguage
       value: de
       objectReference: {fileID: 0}
+    - target: {fileID: 114682282947973832, guid: 6225b1ac5b85c4800834d0c6017232d4,
+        type: 2}
+      propertyPath: cameraToLookAt
+      value: 
+      objectReference: {fileID: 1392457632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6225b1ac5b85c4800834d0c6017232d4, type: 2}
   m_IsPrefabAsset: 0
@@ -2486,6 +2526,11 @@ Prefab:
       propertyPath: toLanguage
       value: da
       objectReference: {fileID: 0}
+    - target: {fileID: 114682282947973832, guid: 6225b1ac5b85c4800834d0c6017232d4,
+        type: 2}
+      propertyPath: cameraToLookAt
+      value: 
+      objectReference: {fileID: 1392457632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6225b1ac5b85c4800834d0c6017232d4, type: 2}
   m_IsPrefabAsset: 0
@@ -2615,6 +2660,11 @@ Prefab:
       propertyPath: toLanguage
       value: en
       objectReference: {fileID: 0}
+    - target: {fileID: 114682282947973832, guid: 6225b1ac5b85c4800834d0c6017232d4,
+        type: 2}
+      propertyPath: cameraToLookAt
+      value: 
+      objectReference: {fileID: 1392457632}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6225b1ac5b85c4800834d0c6017232d4, type: 2}
   m_IsPrefabAsset: 0
