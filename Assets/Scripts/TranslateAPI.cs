@@ -72,6 +72,7 @@ public static class TranslateAPI
         }
 
         audioSource.clip = www.GetAudioClip(false, true, AudioType.MPEG);
+        Debug.Log("clip is " + www.GetAudioClip(false, true, AudioType.MPEG));
         audioSource.Play();
     }
 }
