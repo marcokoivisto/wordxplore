@@ -37,7 +37,6 @@ public class Country : MonoBehaviour  {
     }
 
     public void PlayAudio() {
-
         TranslationManager.Instance.Play(textMP.text, hl);
     }
 }

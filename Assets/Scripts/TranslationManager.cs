@@ -36,7 +36,6 @@ public class TranslationManager : Singleton<TranslationManager> {
     }
 
     public void ReadInputText() {
-        Debug.Log(input);
         if (input && input.text != "") {
             text = input.text;
             downToggleLabel.text = text;
