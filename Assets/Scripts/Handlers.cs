@@ -6,7 +6,7 @@ public class Handlers : MonoBehaviour {
 
 	public GameObject searchUp;
 	public GameObject searchDown;
-
+    public GameObject topNotice;
 
 	// Use this for initialization
 	void Start () {
@@ -41,8 +41,10 @@ public class Handlers : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit rayhit = new RaycastHit();
             if (Physics.Raycast(ray, out rayhit)) {
+                topNotice.SetActive(true);
                 TranslationManager.Instance.SetGoToPlay(rayhit.collider.gameObject);
                 TranslationManager.Instance.PlayTranslation();
+                //topNotice.SetActive(false);
             } else {
                 TranslationManager.Instance.SetGoToPlay(null);
             }
