@@ -7,10 +7,12 @@ public class Handlers : MonoBehaviour {
 	public GameObject searchUp;
 	public GameObject searchDown;
     public GameObject topNotice;
+    public Sprite currentTranslationLang;
+    public string currentTranslationLangText;
 
 	// Use this for initialization
 	void Start () {
-		
+        topNotice.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -18,7 +20,7 @@ public class Handlers : MonoBehaviour {
         TouchHandler();
     }
 
-	public void toggleSearchHello() {
+	public void toggleSearchVisibility() {
 		if (searchUp.activeSelf) {
 			searchUp.SetActive(false);
 			searchDown.SetActive(true);
@@ -29,7 +31,7 @@ public class Handlers : MonoBehaviour {
     }
 	
     public void SubmitBtnHandler() {
-        toggleSearchHello();
+        toggleSearchVisibility();
         TranslationManager.Instance.ReadInputText();
         TranslationManager.Instance.TranslateCountries();
     }
@@ -41,10 +43,14 @@ public class Handlers : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit rayhit = new RaycastHit();
             if (Physics.Raycast(ray, out rayhit)) {
+                var touchedObject = rayhit.collider.gameObject;
+                TranslationManager.Instance.SetGoToPlay(touchedObject);
+                
+                currentTranslationLang = touchedObject.GetComponent<Country>().flag;
+                currentTranslationLangText = touchedObject.GetComponent<Country>().visualToLanguage;
                 topNotice.SetActive(true);
-                TranslationManager.Instance.SetGoToPlay(rayhit.collider.gameObject);
+                
                 TranslationManager.Instance.PlayTranslation();
-                //topNotice.SetActive(false);
             } else {
                 TranslationManager.Instance.SetGoToPlay(null);
             }

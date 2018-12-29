@@ -6,7 +6,10 @@ public class Country : MonoBehaviour  {
     string lang;
     readonly string fromLanguage = "en";
     public string toLanguage = "en";
+    public string visualToLanguage = "English";
     public string hl = "en-gb";
+
+    public Sprite flag = null;
 
     public Camera cameraToLookAt;
 
