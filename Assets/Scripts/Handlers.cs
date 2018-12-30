@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Handlers : MonoBehaviour {
 
 	public GameObject searchUp;
 	public GameObject searchDown;
     public GameObject topNotice;
-    public Sprite currentTranslationLang;
-    public string currentTranslationLangText;
+    public GameObject currentTranslationLang;
+    public Text currentTranslationLangText;
 
 	// Use this for initialization
 	void Start () {
@@ -43,11 +44,10 @@ public class Handlers : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit rayhit = new RaycastHit();
             if (Physics.Raycast(ray, out rayhit)) {
-                var touchedObject = rayhit.collider.gameObject;
-                TranslationManager.Instance.SetGoToPlay(touchedObject);
-                
-                currentTranslationLang = touchedObject.GetComponent<Country>().flag;
-                currentTranslationLangText = touchedObject.GetComponent<Country>().visualToLanguage;
+                TranslationManager.Instance.SetGoToPlay(rayhit.collider.gameObject);
+
+                currentTranslationLang.GetComponent<Image>().sprite = rayhit.collider.gameObject.GetComponent<Country>().flag;
+                currentTranslationLangText.text = rayhit.collider.gameObject.GetComponent<Country>().visualToLanguage;
                 topNotice.SetActive(true);
                 
                 TranslationManager.Instance.PlayTranslation();

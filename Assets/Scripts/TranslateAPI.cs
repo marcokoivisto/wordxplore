@@ -46,8 +46,6 @@ public static class TranslateAPI
             string response = unityWebRequest.downloadHandler.text;
             string textRes = JsonUtility.FromJson<YandexResponse>(response).text[0];
             textMP.text = textRes.ToLower();
-            Debug.Log(response);
-            Debug.Log(textRes);
         }
     }
 
@@ -60,8 +58,6 @@ public static class TranslateAPI
             "&f=44khz_16bit_stereo" +
             "&src=" + WWW.EscapeURL(text);
 
-        Debug.Log(url);
-
         WWW www = new WWW(url);
 
         yield return www;
@@ -72,7 +68,6 @@ public static class TranslateAPI
         }
 
         audioSource.clip = www.GetAudioClip(false, true, AudioType.MPEG);
-        Debug.Log("clip is " + www.GetAudioClip(false, true, AudioType.MPEG));
         audioSource.Play();
     }
 }
