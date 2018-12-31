@@ -30,6 +30,10 @@ public class Handlers : MonoBehaviour {
 			searchDown.SetActive(false);
 		}
     }
+    public IEnumerator hideTopNotice() {
+        yield return new WaitForSeconds(2);
+        topNotice.SetActive(false);
+    }
 	
     public void SubmitBtnHandler() {
         toggleSearchVisibility();
@@ -45,12 +49,11 @@ public class Handlers : MonoBehaviour {
             RaycastHit rayhit = new RaycastHit();
             if (Physics.Raycast(ray, out rayhit)) {
                 TranslationManager.Instance.SetGoToPlay(rayhit.collider.gameObject);
-
                 currentTranslationLang.GetComponent<Image>().sprite = rayhit.collider.gameObject.GetComponent<Country>().flag;
                 currentTranslationLangText.text = rayhit.collider.gameObject.GetComponent<Country>().visualToLanguage;
                 topNotice.SetActive(true);
-                
                 TranslationManager.Instance.PlayTranslation();
+                StartCoroutine(hideTopNotice());
             } else {
                 TranslationManager.Instance.SetGoToPlay(null);
             }
