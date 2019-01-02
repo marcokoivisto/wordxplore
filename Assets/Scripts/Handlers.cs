@@ -63,7 +63,8 @@ public class Handlers : MonoBehaviour {
                 tappedCountry.contentBubble.GetComponent<SpriteRenderer>().sprite = tappedContentSprite;
                 topNotice.SetActive(true);
                 TranslationManager.Instance.PlayTranslation();
-								Handheld.Vibrate();
+
+								Vibration.Vibrate(50);
 
                 StartCoroutine(removeTappedState(tappedCountry));
             } else {
