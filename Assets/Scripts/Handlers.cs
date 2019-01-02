@@ -17,7 +17,7 @@ public class Handlers : MonoBehaviour {
 	void Start () {
         topNotice.SetActive(false);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         TouchHandler();
@@ -38,7 +38,7 @@ public class Handlers : MonoBehaviour {
         tappedCountry.contentBubble.GetComponent<SpriteRenderer>().sprite = contentSprite;
         topNotice.SetActive(false);
     }
-	
+
     public void SubmitBtnHandler() {
         toggleSearchVisibility();
         TranslationManager.Instance.ReadInputText();
@@ -63,7 +63,8 @@ public class Handlers : MonoBehaviour {
                 tappedCountry.contentBubble.GetComponent<SpriteRenderer>().sprite = tappedContentSprite;
                 topNotice.SetActive(true);
                 TranslationManager.Instance.PlayTranslation();
-                
+								Handheld.Vibrate();
+
                 StartCoroutine(removeTappedState(tappedCountry));
             } else {
                 TranslationManager.Instance.SetGoToPlay(null);
