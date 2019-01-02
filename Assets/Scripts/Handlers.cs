@@ -10,6 +10,8 @@ public class Handlers : MonoBehaviour {
     public GameObject topNotice;
     public GameObject currentTranslationLang;
     public Text currentTranslationLangText;
+    public Sprite contentSprite;
+    public Sprite tappedContentSprite;
 
 	// Use this for initialization
 	void Start () {
@@ -30,8 +32,10 @@ public class Handlers : MonoBehaviour {
 			searchDown.SetActive(false);
 		}
     }
-    public IEnumerator hideTopNotice() {
+    public IEnumerator removeTappedState(Country tappedCountry) {
         yield return new WaitForSeconds(2);
+        tappedCountry.textMP.color = new Color32(0, 0, 0, 255);
+        tappedCountry.contentBubble.GetComponent<SpriteRenderer>().sprite = contentSprite;
         topNotice.SetActive(false);
     }
 	
@@ -48,12 +52,19 @@ public class Handlers : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit rayhit = new RaycastHit();
             if (Physics.Raycast(ray, out rayhit)) {
-                TranslationManager.Instance.SetGoToPlay(rayhit.collider.gameObject);
-                currentTranslationLang.GetComponent<Image>().sprite = rayhit.collider.gameObject.GetComponent<Country>().flag;
-                currentTranslationLangText.text = rayhit.collider.gameObject.GetComponent<Country>().visualToLanguage;
+                var tappedObject = rayhit.collider.gameObject;
+                var tappedCountry = tappedObject.GetComponent<Country>();
+
+                TranslationManager.Instance.SetGoToPlay(tappedObject);
+                currentTranslationLang.GetComponent<Image>().sprite = tappedCountry.flag;
+                currentTranslationLangText.text = tappedCountry.visualToLanguage;
+
+                tappedCountry.textMP.color = new Color32(255, 255, 255, 255);
+                tappedCountry.contentBubble.GetComponent<SpriteRenderer>().sprite = tappedContentSprite;
                 topNotice.SetActive(true);
                 TranslationManager.Instance.PlayTranslation();
-                StartCoroutine(hideTopNotice());
+                
+                StartCoroutine(removeTappedState(tappedCountry));
             } else {
                 TranslationManager.Instance.SetGoToPlay(null);
             }

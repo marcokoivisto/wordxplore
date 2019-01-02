@@ -13,7 +13,8 @@ public class Country : MonoBehaviour  {
 
     public Camera cameraToLookAt;
 
-    TextMeshPro textMP;
+    public TextMeshPro textMP;
+    public GameObject contentBubble;
 
     private void Start()
     {
